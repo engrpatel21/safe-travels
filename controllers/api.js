@@ -1,18 +1,24 @@
 const axios = require('axios')
 
 module.exports = {
-    search
+    search,
+    index
+}
+
+function index(req, res){
+    res.render('results/results', {results: null})
 }
 
 function search(req, res) {
     axios
-        .get(`https://api.rawg.io/api/games?page_size=10&search=${req.body.query}`)
+        .get(`https://corona.lmao.ninja/v2/jhucsse/counties/Douglas`)
         .then((response) => {
-            res.render('items/games', {
-                title: 'Game Search',
+            console.log(response.data)
+            res.redirect({
                 user: req.user ? req.user : null,
-                results: response.data.results ? response.data.results : null
-            })
+                results: response.data ? response.data : null,
+                state: req.body.state ? res.body.state : null
+            }, '/api/search')
         
     })
 }
