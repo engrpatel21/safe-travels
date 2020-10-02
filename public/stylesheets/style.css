@@ -10,3 +10,9 @@
   padding-top: 20px;
 }
 
+#googleMap {
+  height: 400px;
+  width: 100%;
+  background-color: grey;
+}
+/* Optional: Makes the sample page fill the window. */
