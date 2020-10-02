@@ -1,13 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Index Page</title>
-</head>
-<body>
-  <a href="/login">Login Page</a>
-  <a href="/api/search">Search</a>
-</body>
-</html>
+<%- include('./partials/header') %>
+
+<div class="landing-container">
+  <div class="fauci-img" >
+    <img  class="fauci-img" src=https://i.imgur.com/bxRCXkD.jpg" alt="">
+  </div>
+  <div class="landing-text">
+    <h2 class="fauci-text">Dr. Fauci's Travel Agency</h2>
+    <h5 class="slogan-text">"A name you can trust"</h5>
+    <div>
+      <% if (user) { %>
+        <a class="btn" href="/auth/logout">Log Out</a>
+      <% } else { %>
+        <a class="btn" href="/auth/google">Login with Google</a> 
+      <% } %>
+    </div>
+    <br>
+    <img class="landing-logo" src="https://hydromedbali.com/wp-content/uploads/2019/10/safe-travel.jpg" alt="">
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
