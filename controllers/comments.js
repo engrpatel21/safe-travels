@@ -23,6 +23,6 @@ function create(req, res) {
 function index(req, res) {
     Comment.find({})
     .then(comments => {
-      res.render('comments', { user: req.user, comments })
+      res.render('results/results', { user: req.user ? req.user : null, comments, results: null})
     })
 }
