@@ -78,11 +78,6 @@
       <% if (results) { %>
         <% results.forEach(result => { %>
            <% if (stateAbv[state] === result.province) { %>
-                <%= result.province %>
-                <%= result.county %> 
-                <%= result.stats.confirmed %>
-                <%= result.stats.deaths %>
-                <%= result.updatedAt %> 
                 <div id='lat' hidden><%= geoLat %> </div>
                 <div id='long' hidden><%= geoLng %> </div>
                 <div id='county-result' hidden ><%= result.county %> </div>    
@@ -93,9 +88,12 @@
         <% }) %>
       <% } %> 
     <div class="results-container">
+      <% if (results) { %>
         <div id="googleMap"></div>
+      <% } %>
         <div class="results-div">
             <% if (results) { %>
+              
                 <% results.forEach(result => { %>
                    <% if (stateAbv[state] === result.province) { %>
                         <h2 class="covid-info">Covid-19 Information</h2>

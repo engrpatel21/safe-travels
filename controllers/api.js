@@ -11,6 +11,7 @@ function address(req, res){
     console.log(req.body)
     axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${req.body.address},+${req.body.state},+${req.body.state}&key=AIzaSyC7XewzzlIpPEnLlh_MOpUoaWoipdyBM_8`)
     .then( geolocation =>{
+        console.log(geoloaction.data.results[0].address_components)
         let county = geolocation.data.results[0].address_components[3].long_name.split(' ')
         county.pop()
         county = county.join(' ')
