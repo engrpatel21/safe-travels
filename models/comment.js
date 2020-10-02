@@ -3,7 +3,8 @@ var mongoose = require('mongoose');
 var commentSchema = new mongoose.Schema({
   name: String,
   county: String,
-  content: String
+  content: String,
+  state: String
 }, {
   timestamps: true
 });
