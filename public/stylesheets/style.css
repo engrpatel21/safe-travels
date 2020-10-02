@@ -201,8 +201,44 @@ ul {
   margin-left: 10px;
 }
 
-/* comments page */
 
-.comment-container
+.comment-container {
+  display: block;
+  justify-content: center;
+  padding: 300px;
+  background-image: url('/images/la.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+}
+
+.comments {
+  font-size: 20px;
+  background-color: rgba(247, 243, 243, 0.918);
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+}
 
 
+
+
+.card {
+  margin: auto;
+  margin-top: 15px;
+}
+
+.new-comment-div {
+  margin-top: 20px;
+}
+
+.btn-danger {
+  background-color: rgb(255, 166, 0);
+  border: solid rgb(255, 166, 0);
+  border-radius: 5px;
+}
