@@ -1,52 +1,57 @@
 <%- include('../partials/header') %>
 
-<h3>Comments</h3>
+<div class="comment-container">
+    <div class="comments">
+        <h3>Comments</h3>
 
-<% if (comments.length) { %>
-    <% comments.forEach(comment => { %>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-            <h5 class="card-title"><%= comment.name %></h5>
-            <h6 class="card-subtitle mb-2 text-muted"><%= comment.county %></h6>
-            <p class="card-text"><%= comment.content %></p>
-            <% if (user) { %>
-                <% if (user.name === comment.name) { %> 
-                    <form action="/comments/<%= comment.id %>?_method=DELETE" method="POST" id="delete">
-                        <button type="submit" class="btn">Delete Comment</button>
-                    </form>
-                <% } %> 
-            <% } %>
-            
-            </div>
-        </div>
-    <% }) %>
-<% } else { %>
-    <h5>No Comments Yet</h5>
-<% } %>
+        <% if (comments.length) { %>
+            <% comments.forEach(comment => { %>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title"><%= comment.name %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= comment.county %></h6>
+                    <p class="card-text"><%= comment.content %></p>
+                    <% if (user) { %>
+                        <% if (user.name === comment.name) { %> 
+                            <form action="/comments/<%= comment.id %>?_method=DELETE" method="POST" id="delete">
+                                <button type="submit" class="btn">Delete Comment</button>
+                            </form>
+                        <% } %> 
+                    <% } %>
+                    
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <h5>No Comments Yet</h5>
+        <% } %>
+        
+        <% if (user) { %>
+            <div class="new-comment-div">
+                <form id="new-comment-form" action="/comments" method="POST">
+                    <div class="form-item">
+                        <label>Name:</label>
+                        <input class="input-c" type="text" name="name" value="<%= user.name %>">
+                        <br>
+                    </div>
+                    <div class="form-item">
+                        <label>Comment:</label>
+                        <textarea type="text" name="content"></textarea>
+                        <br>
+                    </div>
+                    <input type="text" name="county" value="<%= county %>" hidden>
+                    <input type="text" name="state" value="<%= state %>" hidden>
+                    <div class="form-item">
+                        <input class="btn-danger" type="submit" value="Add Comment">
+                    </div>
+                </form>
+            </div>  
+        <% } %>
+    
+    </div>
+    </div>
 
-<% if (user) { %>
-    <div class="new-comment-div">
-        <form id="new-comment-form" action="/comments" method="POST">
-            <div class="form-item">
-                <label>Name:</label>
-                <input type="text" name="name" value="<%= user.name %>">
-                <br>
-            </div>
-            <div class="form-item">
-                <label>Comment:</label>
-                <textarea type="text" name="content"></textarea>
-                <br>
-            </div>
-            <input type="text" name="county" value="<%= county %>" hidden>
-            <input type="text" name="state" value="<%= state %>" hidden>
-            <div class="form-item">
-                <input class="btn-danger" type="submit" value="Add Comment">
-            </div>
-        </form>
-    </div>  
-<% } %>
 
-<!-- hello -->
 
 
 <%- include('../partials/footer') %>
