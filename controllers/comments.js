@@ -3,6 +3,13 @@ const Comment = require('../models/comment')
 module.exports = {
     index,
     create,
+    delete: deleteComment
+}
+
+function deleteComment(req,res){
+    Comment.findByIdAndRemove(req.params.id, function() {
+        res.redirect('/comments')
+    })
 }
 
 function create(req, res) {
