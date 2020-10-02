@@ -19,7 +19,6 @@ body {
 
 nav {
   border-bottom: 5px solid black;
-
 }
 
 
@@ -202,5 +201,8 @@ ul {
   margin-left: 10px;
 }
 
+/* comments page */
+
+.comment-container
 
 
