@@ -90,6 +90,7 @@
     <div class="results-container">
       <% if (results) { %>
         <div id="googleMap"></div>
+        
       <% } %>
         <div class="results-div">
             <% if (results) { %>
@@ -105,12 +106,19 @@
                    <% } %>
                 <% }) %>
             <% } %> 
-            <a class="btn" id="message-button" href="/comments">Go to the Message Board</a>
+            
         </div>
         
     </div>
-
-
+    <% if(results) {%> 
+      <% results.forEach(result => { %>
+        <% if (result.province === stateAbv[state]) { %>
+          <a class="btn" id="message-button" href='/comments/<%= state %>/<%= result.county %>'>Go to the Message Board</a>
+        <% } %>
+        
+      <% }) %>
+    
+    <% } %>
 
     <script>
     const long = Number(document.getElementById('long').textContent)

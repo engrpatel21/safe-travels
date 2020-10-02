@@ -7,22 +7,22 @@ module.exports = {
 }
 
 function deleteComment(req,res){
-    Comment.findByIdAndRemove(req.params.id, function() {
-        res.redirect('/comments')
-    })
+    Comment.findByIdAndDelete(req.params.id)
+    .then(comment => 
+        res.redirect(`/comments/${comment.state}/${comment.county}`)
+        )
 }
 
 function create(req, res) {
-    const comment = new Comment(req.body)
-    comment.save(function(err) {
-        if (err) return res.render('comments')
-        res.redirect('/comments');
-    })      
+   Comment.create(req.body)
+   .then(comment =>{
+       res.redirect(`/comments/${comment.state}/${comment.county}`)
+   })
 }
 
 function index(req, res) {
-    Comment.find({})
+    Comment.find({state: req.params.state, county: req.params.county})
     .then(comments => {
-      res.render('results/results', { user: req.user ? req.user : null, comments, results: null})
+      res.render('comments/index', { user: req.user ? req.user : null, comments, results: null, state: req.params.state, county: req.params.county})
     })
 }

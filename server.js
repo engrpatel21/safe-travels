@@ -4,6 +4,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
+const methodOverride = require('method-override')
 
 
 // load the env vars
@@ -37,7 +38,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-
+app.use(methodOverride('_method'))
 app.use(passport.initialize());
 app.use(passport.session());
 

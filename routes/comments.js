@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const commentsCtrl = require('../controllers/comments')
 
-router.get('/', commentsCtrl.index)
+router.get('/:state/:county', commentsCtrl.index)
 router.post('/', isLoggedIn, commentsCtrl.create)
 router.delete('/:id', isLoggedIn, commentsCtrl.delete)
 

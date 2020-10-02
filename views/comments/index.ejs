@@ -12,7 +12,7 @@
             <% if (user) { %>
                 <% if (user.name === comment.name) { %> 
                     <form action="/comments/<%= comment.id %>?_method=DELETE" method="POST" id="delete">
-                        <button class="btn">Delete Comment</button>
+                        <button type="submit" class="btn">Delete Comment</button>
                     </form>
                 <% } %> 
             <% } %>
@@ -33,15 +33,12 @@
                 <br>
             </div>
             <div class="form-item">
-                <label>County:</label>
-                <input type="text" name="county">
-                <br>
-            </div>
-            <div class="form-item">
                 <label>Comment:</label>
                 <textarea type="text" name="content"></textarea>
                 <br>
             </div>
+            <input type="text" name="county" value="<%= county %>" hidden>
+            <input type="text" name="state" value="<%= state %>" hidden>
             <div class="form-item">
                 <input class="btn-danger" type="submit" value="Add Comment">
             </div>
