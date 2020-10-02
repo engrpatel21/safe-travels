@@ -10,6 +10,7 @@
   padding-top: 20px;
 }
 
+
 .logo-img {
   width: 110px;
   height: 80px;
@@ -130,3 +131,11 @@ ul {
   padding: 20px;
   text-align: justify;
 }
+
+#googleMap {
+  height: 400px;
+  width: 100%;
+  background-color: grey;
+}
+/* Optional: Makes the sample page fill the window. */
+
