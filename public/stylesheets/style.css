@@ -19,7 +19,7 @@
 
 nav {
   border-bottom: 5px solid black;
-  margin-bottom: 80px;
+
 }
 
 
@@ -132,10 +132,60 @@ ul {
   text-align: justify;
 }
 
+/* Search page */
+.results-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+.results-div {
+  margin: 50px;
+}
+
 #googleMap {
   height: 400px;
-  width: 100%;
+  width: 50%;
   background-color: grey;
 }
-/* Optional: Makes the sample page fill the window. */
+
+.search-container {
+  display: block;
+  justify-content: center;
+  padding: 300px;
+  background-image: url('/images/la.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  margin: auto;
+}
+
+#h1 {
+  font-size: 60px;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.search-form {
+  text-align: center;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.596);
+  padding: 25px;
+  width: fit-content;
+}
+
+.search-select, .search-input {
+  height: 35px;
+  margin-right: 10px;
+}
+
+.search-label {
+  font-size: larger;
+  margin-left: 10px;
+}
+
+
 

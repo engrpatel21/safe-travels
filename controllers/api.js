@@ -25,11 +25,9 @@ function address(req, res){
                     geoLat: geolocation.data.results[0].geometry.location.lat ? geolocation.data.results[0].geometry.location.lat : null,
                     geoLng: geolocation.data.results[0].geometry.location.lng ? geolocation.data.results[0].geometry.location.lng : null,
                     comments: comments ? comments : null
-                } )
-            })
-        
-        
-    })
+                })
+            })        
+        })
     })
 }
 
