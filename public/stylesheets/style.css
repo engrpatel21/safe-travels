@@ -19,7 +19,6 @@ body {
 
 nav {
   border-bottom: 5px solid black;
-
 }
 
 
@@ -202,6 +201,7 @@ ul {
   margin-left: 10px;
 }
 
+
 .comment-container {
   display: block;
   justify-content: center;
@@ -224,6 +224,9 @@ ul {
   padding: 20px;
   text-align: center;
 }
+
+
+
 
 .card {
   margin: auto;
