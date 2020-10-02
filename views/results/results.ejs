@@ -98,16 +98,18 @@
             <% if (results) { %>
                 <% results.forEach(result => { %>
                    <% if (stateAbv[state] === result.province) { %>
-                        <h4>State: <%= result.province %></h1>
-                        <h4>County: <%= result.county %></h1> 
-                        <h4>Confirmed Cases: <%= result.stats.confirmed %></h1>
-                        <h4>Deaths: <%= result.stats.deaths %></h1>
-                        <h4>Last Updated: <%= result.updatedAt %></h1> 
+                        <h2 class="covid-info">Covid-19 Information</h2>
+                        <h4 class="results-div">State: <%= result.province %></h4>
+                        <h4 class="results-div">County: <%= result.county %></h4> 
+                        <h4 class="results-div">Confirmed Cases: <%= result.stats.confirmed %></h4>
+                        <h4 class="results-div">Deaths: <%= result.stats.deaths %></h4>
+                        <h4 class="results-div">Last Updated: <%= result.updatedAt %></h4> 
                    <% } %>
                 <% }) %>
             <% } %> 
+            <a class="btn" id="message-button" href="/comments">Go to the Message Board</a>
         </div>
-
+        
     </div>
 
 
