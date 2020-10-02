@@ -1,5 +1,5 @@
-.brand-logo {
-  margin-left: 15px;
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
 .card .card-content .card-title {
@@ -68,7 +68,7 @@ ul {
 
 .btn {
   margin: 10px;
-  background-color: rgb(255, 208, 0);
+  background-color: rgb(255, 166, 0);
 }
 
 /* tips page */
@@ -87,6 +87,7 @@ ul {
 .tips-container {
   display: block;
   text-align: center;
+  margin-top: 150px;
 }
 
 .tips-img-container {
@@ -132,6 +133,14 @@ ul {
   text-align: justify;
 }
 
+#message-button {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: fit-content;
+  margin-top: 50px;
+}
+
 /* Search page */
 .results-container {
   display: flex;
@@ -140,13 +149,19 @@ ul {
 }
 
 .results-div {
-  margin: 50px;
+  margin: 25px;
+  font-size: 25px;
+}
+
+.covid-info {
+  font-size: 35px;
 }
 
 #googleMap {
-  height: 400px;
-  width: 50%;
+  height: 700px;
+  width: 75%;
   background-color: grey;
+  margin: 40px;
 }
 
 .search-container {
